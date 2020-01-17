@@ -1,0 +1,25 @@
+in:
+  type: file
+  path_prefix: unzip_charset_test_sjis.csv.zip
+  decoders:
+  - {type: commons-compress}
+  parser:
+    type: none
+    column_name: payload
+    charset: MS932
+    newline: CRLF
+exec:
+  min_output_tasks: 1    # disable page scatterings
+out:
+  type: file
+  path_prefix: result
+  sequence_format: ""
+  file_ext: .csv
+  formatter:
+    type: csv # embulk-parser-none の説明通り
+    charset: UTF-8
+    newline: LF
+    delimiter: 0 # embulk-parser-none の説明通り
+    quote_policy: NONE # embulk-parser-none の説明通り
+    header_line: false # embulk-parser-none の説明通り
+

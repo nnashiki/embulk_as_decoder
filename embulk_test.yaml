@@ -2,7 +2,7 @@ in:
   type: file
   path_prefix: unzip_charset_test_sjis.csv.zip
   decoders:
-  - {type: commons-compress}
+    - {type: commons-compress}
   parser:
     type: none
     column_name: payload
